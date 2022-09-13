@@ -1,5 +1,24 @@
 package Utility;
 
+import java.io.FileInputStream;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class Base {
+	protected static WebElement element;
+	protected static WebDriver driver;
+	protected static FileInputStream file;
+	protected static Properties prop;
+	protected static Utility utility;
+	static {
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriverManager.firefoxdriver().setup();
+		}
+	
 
 }
