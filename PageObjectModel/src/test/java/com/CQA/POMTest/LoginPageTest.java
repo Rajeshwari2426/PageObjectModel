@@ -2,9 +2,9 @@ package com.CQA.POMTest;
 
 import static org.testng.Assert.assertEquals;
 
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+
 import org.testng.annotations.Test;
 
 import base.Base;
@@ -18,7 +18,7 @@ public class LoginPageTest extends Base {
 	
 	
 		@BeforeMethod
-		public static void triggerDriver() throws Exception {
+		public  void triggerDriver() throws Exception {
 			utility.initializeDriver(prop.getProperty("browser"));			
 		}	
 		@Test
@@ -27,6 +27,9 @@ public class LoginPageTest extends Base {
 		String url=prop.getProperty("baseURL");
 		driver.get(url);
 	}
+		
+		
+		@Test
 		public void validLoginPageWithconfigDataTest() {
 			LoginP=new LoginPage();
 			LoginP.loginUser();
@@ -34,15 +37,23 @@ public class LoginPageTest extends Base {
 			assertEquals(homePageTitle,"Facebook");
 			
 		}
+		@Test
+		public void validLoginPageWithXlxsDataTest() {
+			LoginP=new LoginPage();
+			LoginP.loginUsingXlxs();
+			String homePageTitle=LoginP.verifyHomePage();
+			assertEquals(homePageTitle,"Facebook");
+			
+		}
 		@Test 
 		public void validateInvalidLoginCredTest() {
 			LoginP=new LoginPage();
-			message=LoginP.validateInvalidLoginCred();
+			message=LoginP.validateIinvalidLoginCred();
 			assertEquals(message,"The password that you've entered is incorrect. Forgotten password?");
 			
 		}
-		@AfterTest
-		public static void terminateDriver() throws InterruptedException {
+		@AfterMethod
+		public  void terminateDriver() throws InterruptedException {
 			 utility.closeDriver();
 	}
 

@@ -30,15 +30,12 @@ public class Base {
 	
 	public static LoginPage LoginP;
 	protected static String message;
-	final static String File_Path=System.getProperty("user.dir")+
+	
+	final static String File_Path=System.getProperty("user.dir")+			
 			File.separator+"resources"+
 			File.separator+"repository"+
 			File.separator+"LoginTestData.xlsx";
-	
-	
-	
-	static {
-		
+	static {		
 		WebDriverManager.chromedriver().setup();
 		WebDriverManager.firefoxdriver().setup();
 		}
@@ -46,7 +43,7 @@ public class Base {
 	public Base() {
 		try {
 			prop=new Properties();
-			file=new FileInputStream(".\\config.properties");
+			file=new FileInputStream("C:\\Users\\rajar\\eclipse-workspace\\PageObjectModel\\PageObjectModel\\resources\\repository\\LoginTestData.xlsx");
 			prop.load(file);
 			
 		} catch (Exception e) {

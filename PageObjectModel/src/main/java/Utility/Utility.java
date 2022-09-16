@@ -17,16 +17,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import base.Base;
 
 public class Utility extends Base{
-	public  static void initializeDriver(String browser) throws IOException {
+	@SuppressWarnings("deprecation")
+	public static void initializeDriver(String browser) throws IOException {
 		
 		file=new FileInputStream("C:\\Users\\rajar\\eclipse-workspace\\PageObjectModel\\PageObjectModel\\resources\\config.properties");
 		prop=new Properties();
 		prop.load(file);
 		
-		if (browser .equals("chrome")) {
+		if (browser.equals("chrome")) {
 			driver=new ChromeDriver();
 			driver.manage().window().maximize();
-			driver.manage().timeouts().pageLoadTimeout(20,TimeUnit.SECONDS);
+			//driver.manage().timeouts().pageLoadTimeout(20,TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
 			driver.get(prop.getProperty("baseURL"));
 		}else {
@@ -66,7 +67,7 @@ public class Utility extends Base{
 	}
 	public static List<List<String>> excelReader() throws IOException{
 		List<List<String>> values=new LinkedList<List<String>>();
-		File file=new File(System.getProperty("user.dir")+"C:\\Users\\rajar\\eclipse-workspace\\PageObjectModel\\PageObjectModel\\resources\\repository\\LoginTestData.xlsx");
+		File file=new File(System.getProperty("user.dir") + "C:\\Users\\rajar\\eclipse-workspace\\PageObjectModel\\PageObjectModel\\resources\\repository\\LoginTestData.xlsx");
 		FileInputStream fis = new FileInputStream(file);
 		
 		XSSFWorkbook wb=new XSSFWorkbook(fis);

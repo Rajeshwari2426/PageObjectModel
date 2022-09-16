@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.CQA.POMTest.LoginFromChrome">
+      <class name="com.CQA.POMTest.LoginPageTest">
         <methods>
-          <include name="chromeLogin"/>
+          <include name="validLoginPageWithconfigDataTest"/>
           <include name="triggerDriver"/>
           <include name="terminateDriver"/>
         </methods>
-      </class> <!-- com.CQA.POMTest.LoginFromChrome -->
+      </class> <!-- com.CQA.POMTest.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
