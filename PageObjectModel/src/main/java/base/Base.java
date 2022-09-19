@@ -10,6 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import Utility.Utility;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -35,15 +36,15 @@ public class Base {
 			File.separator+"resources"+
 			File.separator+"repository"+
 			File.separator+"LoginTestData.xlsx";
+	
 	static {		
 		WebDriverManager.chromedriver().setup();
 		WebDriverManager.firefoxdriver().setup();
 		}
-	
 	public Base() {
 		try {
 			prop=new Properties();
-			file=new FileInputStream("C:\\Users\\rajar\\eclipse-workspace\\PageObjectModel\\PageObjectModel\\resources\\repository\\LoginTestData.xlsx");
+			file=new FileInputStream("C:\\Users\\rajar\\eclipse-workspace\\PageObjectModel\\PageObjectModel\\resources\\config.properties");
 			prop.load(file);
 			
 		} catch (Exception e) {

@@ -5,7 +5,7 @@
     <classes>
       <class name="com.CQA.POMTest.LoginPageTest">
         <methods>
-          <include name="validLoginPageWithconfigDataTest"/>
+          <include name="validLoginPageWithXlsxDataTest"/>
           <include name="triggerDriver"/>
           <include name="terminateDriver"/>
         </methods>

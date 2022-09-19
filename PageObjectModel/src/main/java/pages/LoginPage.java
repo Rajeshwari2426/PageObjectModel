@@ -21,10 +21,12 @@ public class LoginPage extends Base{
 	WebElement homeBtn;
 	@FindBy(className="_9ay7")
 	WebElement ErrorMsg;
+	
 	//Initialisation
 	public LoginPage(){
 	PageFactory.initElements(driver, this);
 	}
+	
 	//Utilisation
 	public void loginUser() {
 		try {
@@ -39,21 +41,22 @@ public class LoginPage extends Base{
 		
 	}
 	@SuppressWarnings("static-access")
-	public void loginUsingXlxs() {
+	public void loginUsingXlsx() {
 		List<List<String>> values=new LinkedList<List<String>>();
 		try {
 			values.addAll(utility.excelReader());
-		} catch (IOException e) {
-		
-			e.printStackTrace();
-		}
-		
-		email.sendKeys(values.get(0).get(0));
+			email.sendKeys(values.get(0).get(0));
 		password.sendKeys(values.get(0).get(1));
 		loginBtn.click();
 		homeBtn.click();
+		System.out.print(System.getProperty("user.dir"));
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
 		
 	}
+	@SuppressWarnings("static-access")
 	public String validateIinvalidLoginCred() {
 		try {
 			List<List<String>> values=new LinkedList<List<String>>();
@@ -61,8 +64,7 @@ public class LoginPage extends Base{
 			email.sendKeys(values.get(1).get(0));
 			password.sendKeys(values.get(1).get(1));
 			loginBtn.click();
-			 message=ErrorMsg.getText();
-			
+			 message=ErrorMsg.getText();			
 			} catch (Exception e) {
 			
 		}
