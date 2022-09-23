@@ -14,9 +14,9 @@ public class LoginPage extends Base{
 	@FindBy(id="email")
 	 WebElement email;
 	@FindBy(name="pass")
-	private WebElement password;
+	 WebElement password;
 	@FindBy(name="login")
-	private WebElement loginBtn;
+	WebElement loginBtn;
 	@FindBy(xpath="//a[@aria-label='Home']")
 	WebElement homeBtn;
 	@FindBy(className="_9ay7")

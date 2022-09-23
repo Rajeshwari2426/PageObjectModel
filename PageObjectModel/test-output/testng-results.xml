@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-19T09:37:04 IST" name="Default suite" finished-at="2022-09-19T09:37:21 IST" duration-ms="16522">
+  <suite started-at="2022-09-23T08:11:39 IST" name="Default suite" finished-at="2022-09-23T08:13:30 IST" duration-ms="111479">
     <groups>
     </groups>
-    <test started-at="2022-09-19T09:37:04 IST" name="Default test" finished-at="2022-09-19T09:37:21 IST" duration-ms="16522">
-      <class name="com.CQA.POMTest.LoginPageTest">
-        <test-method is-config="true" signature="triggerDriver()[pri:0, instance:com.CQA.POMTest.LoginPageTest@2f6bcf87]" started-at="2022-09-19T09:37:05 IST" name="triggerDriver" finished-at="2022-09-19T09:37:11 IST" duration-ms="6896" status="PASS">
+    <test started-at="2022-09-23T08:11:39 IST" name="Default test" finished-at="2022-09-23T08:13:30 IST" duration-ms="111479">
+      <class name="com.CQA.POMTest.ProfilePageTest$LoginPageTest">
+        <test-method is-config="true" signature="triggerDriver()[pri:0, instance:com.CQA.POMTest.ProfilePageTest$LoginPageTest@17d238b1]" started-at="2022-09-23T08:11:39 IST" name="triggerDriver" finished-at="2022-09-23T08:12:06 IST" duration-ms="27225" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- triggerDriver -->
-        <test-method signature="validLoginPageWithXlsxDataTest()[pri:0, instance:com.CQA.POMTest.LoginPageTest@2f6bcf87]" started-at="2022-09-19T09:37:11 IST" name="validLoginPageWithXlsxDataTest" finished-at="2022-09-19T09:37:19 IST" duration-ms="7062" status="PASS">
+        <test-method signature="uploadProfilePic()[pri:0, instance:com.CQA.POMTest.ProfilePageTest$LoginPageTest@17d238b1]" started-at="2022-09-23T08:12:06 IST" name="uploadProfilePic" finished-at="2022-09-23T08:13:30 IST" duration-ms="83950" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validLoginPageWithXlsxDataTest -->
-        <test-method is-config="true" signature="terminateDriver()[pri:0, instance:com.CQA.POMTest.LoginPageTest@2f6bcf87]" started-at="2022-09-19T09:37:19 IST" name="terminateDriver" finished-at="2022-09-19T09:37:21 IST" duration-ms="2480" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- terminateDriver -->
-      </class> <!-- com.CQA.POMTest.LoginPageTest -->
+        </test-method> <!-- uploadProfilePic -->
+      </class> <!-- com.CQA.POMTest.ProfilePageTest$LoginPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

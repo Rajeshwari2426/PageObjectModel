@@ -68,7 +68,7 @@ public class LoginPageTest extends Base {
 
 	@AfterMethod
 	public void terminateDriver() throws InterruptedException {
-		Utility.closeDriver();
+		utility.closeDriver();
 	}
 
 }
