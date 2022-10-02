@@ -1,14 +1,19 @@
-package Utility;
+package utility;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import base.Base;
@@ -24,6 +29,7 @@ public class Utility extends Base {
 		prop.load(file);
 
 		if (browser.equals("chrome")) {
+			logger.info("***********chrome started***********");
 			driver = new ChromeDriver();
 			driver.manage().deleteAllCookies();
 			driver.manage().window().maximize();
@@ -39,12 +45,11 @@ public class Utility extends Base {
 		}
 	}
 
-	
 	public static Object[][] getLoginData() {
 		try {
 			excelfile = new FileInputStream(
 					"C:\\Users\\rajar\\eclipse-workspace\\PageObjectModel\\PageObjectModel\\resources\\repository\\LoginTestData.xlsx");
-			XSSFWorkbook xWorkbook = new XSSFWorkbook(excelfile);//for creating new sheets
+			XSSFWorkbook xWorkbook = new XSSFWorkbook(excelfile);// for creating new sheets
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -73,8 +78,7 @@ public class Utility extends Base {
 
 	public static List<List<String>> excelReader() throws IOException {
 		List<List<String>> values = new LinkedList<List<String>>();
-		File file = new File(System.getProperty("user.dir")
-				+ "\\resources\\repository\\LoginTestData.xlsx");
+		File file = new File(System.getProperty("user.dir") + "\\resources\\repository\\LoginTestData.xlsx");
 		FileInputStream fis = new FileInputStream(file);
 
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
@@ -82,7 +86,7 @@ public class Utility extends Base {
 
 		int rowCount = sheet.getLastRowNum();
 
-		for (int i = 1; i <=rowCount; i++) {
+		for (int i = 1; i <= rowCount; i++) {
 			int cellCount = sheet.getRow(i).getLastCellNum();
 			List<String> val = new LinkedList<String>();
 			for (int j = 0; j < cellCount; j++) {
@@ -94,6 +98,19 @@ public class Utility extends Base {
 		}
 		return values;
 
+	}
+
+	public static void takeScreenshot() {
+		Date d = new Date();
+		String currentdate = d.toString().replaceAll(":", "_");
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File srcFile = ts.getScreenshotAs(OutputType.FILE);
+		File destFile = new File(".\\screenshots\\" + currentdate + "\\" + "_screenshot.png");
+		try {
+			FileUtils.copyFile(srcFile, destFile);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void closeDriver() throws InterruptedException {

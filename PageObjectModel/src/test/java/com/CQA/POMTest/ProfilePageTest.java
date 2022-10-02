@@ -9,10 +9,10 @@ import org.testng.annotations.Test;
 import base.Base;
 import pages.ProfilePage;
 
-public class ProfilePageTest {
-	public class LoginPageTest extends Base {
+public class ProfilePageTest extends Base {
+	
 		
-		public LoginPageTest() {
+		public ProfilePageTest() {
 			
 			super();
 		}
@@ -35,6 +35,32 @@ public class ProfilePageTest {
 			profileP=new ProfilePage();
 			profileP.postProfilePic();
 		}
+		
+		@Test
+		public void seeAllPhoto() {
+
+			profileP=new ProfilePage();
+			
+		   profileP.seeAllPhotos();
+		}
+		
+		@Test
+		public void addBio() {
+
+			profileP=new ProfilePage();
+			
+		   profileP.addBio();
+		}
+
+		@Test
+		public void editBio() {
+
+			profileP=new ProfilePage();
+			
+		   profileP.editBio();
+		}
+		
+		
 		@AfterMethod
 		public void terminateDriver() throws InterruptedException {
 		Thread.sleep(1000);
@@ -42,4 +68,4 @@ public class ProfilePageTest {
 		}
 	}
 
-}
+

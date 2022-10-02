@@ -7,6 +7,7 @@
         <methods>
           <include name="validLoginPageWithconfigDataTest"/>
           <include name="triggerDriver"/>
+          <include name="terminateDriver"/>
         </methods>
       </class> <!-- com.CQA.POMTest.LoginPageTest -->
     </classes>

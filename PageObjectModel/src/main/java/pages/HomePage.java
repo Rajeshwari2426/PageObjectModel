@@ -19,6 +19,8 @@ public class HomePage extends LoginPage {
 	WebElement postbtn;
 	@FindBy(xpath = "//p[@class='kmwttqpk kjdc1dyq l7ghb35v m8h3af8h']")
 	WebElement comentbtn;
+	@FindBy(xpath = "//div[@class='om3e55n1 oxkhqvkx rl78xhln gt60zsk1 d2hqwtrz alzwoclg jl2a5g8c icdlwmnq']//span//div[@class='rtxb060y fsf7x5fv aglvbi8b igjjae4c om3e55n1 cxfqmxzd'][normalize-space()='Like']")
+	WebElement likeBtn;
 
 	public void postPic() {
 
@@ -65,7 +67,7 @@ public class HomePage extends LoginPage {
 			e.printStackTrace();
 		}
 		}
-		public void comment() {
+		public void likeAndComment() {
 
 			try {
 				email.sendKeys(prop.getProperty("emailId"));
@@ -73,11 +75,14 @@ public class HomePage extends LoginPage {
 				loginBtn.click();
 				homeBtn.click();
 				Thread.sleep(3000);
+				
 				comentbtn.sendKeys("nice");
 				Robot r = new Robot();
 				r.keyPress(KeyEvent.VK_ENTER);
 				r.keyRelease(KeyEvent.VK_ENTER);
 				Thread.sleep(3000);
+				likeBtn.click();
+				Thread.sleep(500);
 				
 			} catch (Exception e) {
 				e.printStackTrace();
